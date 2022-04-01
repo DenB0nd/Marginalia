@@ -125,6 +125,7 @@
                 {
                     left++;
                 }
+
                 while (array[right].CompareTo(pivot) > 0)
                 {
                     right--;
@@ -134,7 +135,10 @@
                 {
                     break;
                 }
-                Swap(ref array[left++], ref array[right--]);
+
+                (array[left], array[right]) = (array[right], array[left]);
+                left++;
+                right--;
             }
             return right;
         }
