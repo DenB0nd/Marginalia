@@ -2,13 +2,20 @@
 
 class DSU
 {
-    private Dictionary<int, int> _sets = new Dictionary<int, int>();
+    private int[] _sets = new int[1];
+    private Random _random = new Random();
 
-    public int SetsCount => _sets.Where(s => s.Key == s.Value).Count();
+    public int SetsCount { get; private set; }
+
+    public DSU(int size)
+    {
+        _sets = new int[size];
+    }
 
     public void MakeSet(int x)
     {
         _sets[x] = x;
+        SetsCount++;
     }
 
     public int Find(int x)
@@ -25,7 +32,11 @@ class DSU
         x = Find(x);
         y = Find(y);
 
-        if (Random.Shared.Next() % 2 == 0)
+        if (x != y)
+        {
+            SetsCount--;
+        }
+        if (_random.Next() % 2 == 0)
         {
             (x, y) = (y, x);
         }
