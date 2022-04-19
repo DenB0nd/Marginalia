@@ -1,16 +1,13 @@
 ﻿namespace Tools_And_Practice.Structures;
 
-class DSU
+public class DisjointSetUnion
 {
-    private int[] _sets = new int[1];
-    private Random _random = new Random();
+    private readonly int[] _sets;
+    private readonly Random _random = new Random();
 
     public int SetsCount { get; private set; }
 
-    public DSU(int size)
-    {
-        _sets = new int[size];
-    }
+    public DisjointSetUnion(int size) => _sets = new int[size];
 
     public void MakeSet(int x)
     {
@@ -24,6 +21,7 @@ class DSU
         {
             return x;
         }
+
         return _sets[x] = Find(_sets[x]);
     }
 
@@ -36,10 +34,12 @@ class DSU
         {
             SetsCount--;
         }
+
         if (_random.Next() % 2 == 0)
         {
             (x, y) = (y, x);
         }
+
         _sets[x] = y;
     }
 }
