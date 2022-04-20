@@ -2,7 +2,7 @@
 
 public static class EnumerableExtensions
 {
-    internal static T[,] JaggedToMultidimensional<T>(this T[][] jaggedArray)
+    public static T[,] JaggedToMultidimensional<T>(this T[][] jaggedArray)
     {
         int rows = jaggedArray.Length;
         int columns = jaggedArray.Max(subArray => subArray.Length);
@@ -19,7 +19,7 @@ public static class EnumerableExtensions
         return twoDimensionalArray;
     }
 
-    internal static T[][] TwoDimensionalToJagged<T>(this T[,] twoDimensionalArray)
+    public static T[][] TwoDimensionalToJagged<T>(this T[,] twoDimensionalArray)
     {
         int rowsFirstIndex = twoDimensionalArray.GetLowerBound(0);
         int rowsLastIndex = twoDimensionalArray.GetUpperBound(0);
