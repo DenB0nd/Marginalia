@@ -1,4 +1,4 @@
-﻿namespace Tools_And_Practice;
+﻿namespace Tools_And_Practice.Extentions;
 
 public static class EnumerableExtensions
 {
@@ -41,5 +41,31 @@ public static class EnumerableExtensions
         }
 
         return jaggedArray;
+    }
+
+    public static IEnumerable<T> GetColumn<T>(this T[,] matrix, int columnNumber)
+    {
+        ArgumentNullException.ThrowIfNull(matrix, nameof(matrix));
+
+        if (columnNumber < 0 || columnNumber >= matrix.GetLength(1))
+        {
+            return Enumerable.Empty<T>();
+        }
+
+        return Enumerable.Range(0, matrix.GetLength(0))
+            .Select(x => matrix[x, columnNumber]);
+    }
+
+    public static IEnumerable<T> GetRow<T>(this T[,] matrix, int rowNumber)
+    {
+        ArgumentNullException.ThrowIfNull(matrix, nameof(matrix));
+
+        if (rowNumber < 0 || rowNumber >= matrix.GetLength(0))
+        {
+            return Enumerable.Empty<T>();
+        }
+
+        return Enumerable.Range(0, matrix.GetLength(1))
+                .Select(x => matrix[rowNumber, x]);
     }
 }

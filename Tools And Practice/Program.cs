@@ -1,10 +1,9 @@
-﻿using Tools_And_Practice.Algorithms;
+﻿using Tools_And_Practice.Extentions;
+using Tools_And_Practice.Algorithms;
 
-int[] nums = Enumerable.Repeat(0, 30).Select(x => Random.Shared.Next(50)).ToArray();
 
-SortingAlgorithms.QuickSort(ref nums, 0, nums.Length - 1);
+int[,] vs = new int[,] { { 0, 1, 2 }, { 1, 2, 3 }, { 3, 4, 5 }, { 5, 6, 7 } };
+int[,] r = null;
 
-foreach (int i in nums)
-{
-    Console.WriteLine(i);
-}
+vs.GetRow(4).ToList().ForEach(s => global::System.Console.WriteLine(s));
+vs.GetColumn(2).ToList().ForEach(s => global::System.Console.WriteLine(s));
