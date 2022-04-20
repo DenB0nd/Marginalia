@@ -2,7 +2,7 @@
 
 public static class BinarySearchs
 {
-    public static int BinarySearch<T>(T[] array, T num)
+    public static int BinarySearch<T>(T[] array, T value)
         where T : IComparable<T>
     {
         int first = 0;
@@ -11,12 +11,12 @@ public static class BinarySearchs
         while (last > first)
         {
             mid = first + ((last - first) / 2);
-            if (num.Equals(array[mid]))
+            if (value.Equals(array[mid]))
             {
                 return mid;
             }
 
-            if (num.CompareTo(array[mid]) > 0)
+            if (value.CompareTo(array[mid]) > 0)
             {
                 first = mid + 1;
             }
@@ -29,7 +29,7 @@ public static class BinarySearchs
         return -1;
     }
 
-    public static int BinarySearchLowerBound<T>(T[] array, T num)
+    public static int BinarySearchLowerBound<T>(T[] array, T value)
         where T : IComparable<T>
     {
         int first = 0;
@@ -38,7 +38,7 @@ public static class BinarySearchs
         while (last > first)
         {
             mid = (first + last) / 2;
-            if (num.CompareTo(array[mid]) > 0)
+            if (value.CompareTo(array[mid]) > 0)
             {
                 first = mid + 1;
             }
@@ -51,7 +51,7 @@ public static class BinarySearchs
         return last;
     }
 
-    public static int BinarySearchUpperBound<T>(T[] array, int num) 
+    public static int BinarySearchUpperBound<T>(T[] array, T value) 
         where T : IComparable
     {
         int first = 0;
@@ -60,7 +60,7 @@ public static class BinarySearchs
         while (last > first)
         {
             mid = (first + last) / 2;
-            if (num.CompareTo(array[mid]) < 0)
+            if (value.CompareTo(array[mid]) < 0)
             {
                 last = mid;
             }
