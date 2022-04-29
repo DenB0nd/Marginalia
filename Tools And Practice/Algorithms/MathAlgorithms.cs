@@ -71,4 +71,17 @@ public static class MathAlgorithms
 
         return array[^1];
     }
+
+    public static double CountPI(double iterationsNumaber = 10_000_000_000)
+    {
+        double result = 3;
+        double four = 4;
+
+        for (double denom = 2; denom < iterationsNumaber; denom += 4)
+        {
+            result += four / (denom * (denom + 1) * (denom + 2)) - (four / ((denom + 2) * (denom + 3) * (denom + 4)));
+        }
+
+        return result;
+    }
 }
