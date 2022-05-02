@@ -2,4 +2,4 @@
 using Tools_And_Practice.Algorithms;
 
 
-Console.WriteLine(MathAlgorithms.CountPI());
+Enumerable.Range(1, 10).Shuffle().ToList().ForEach(s => Console.WriteLine(s));
