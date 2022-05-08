@@ -89,4 +89,13 @@ public static class EnumerableExtensions
 
         return string.Join("", enumerable.Select(x => x?.ToString()));
     }
+
+    public static IEnumerable<T> IntersectWithDuplicates<T>(this IEnumerable<T> first, IEnumerable<T> second)
+    {
+        ArgumentNullException.ThrowIfNull(first);
+        ArgumentNullException.ThrowIfNull(second);
+        
+        var buff = second.ToList();
+        return first.Where(s => buff.Remove(s));
+    }
 }
