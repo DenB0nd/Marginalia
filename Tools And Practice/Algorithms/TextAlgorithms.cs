@@ -1,6 +1,6 @@
 ﻿namespace Tools_And_Practice.Algorithms;
 
-public static class StringAlgorithms
+public static class TextAlgorithms
 {
     public static int LevenshteinDistance(string firstWord, string secondWord, int deleteValue = 1, int insertValue = 1, int replaceValue = 1)
     {
