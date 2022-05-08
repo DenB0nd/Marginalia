@@ -2,4 +2,6 @@
 using Tools_And_Practice.Algorithms;
 
 
-Enumerable.Range(1, 10).Shuffle().ToList().ForEach(s => Console.WriteLine(s));
+int?[] array = { 0, 4, null, 1, 2, 3 };
+
+Console.WriteLine(array.ConvertToString());

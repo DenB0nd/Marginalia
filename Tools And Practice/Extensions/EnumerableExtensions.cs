@@ -82,4 +82,11 @@ public static class EnumerableExtensions
             buffer[j] = buffer[i];
         }
     }
+
+    public static string ConvertToString<T>(this IEnumerable<T> enumerable)
+    {
+        ArgumentNullException.ThrowIfNull(enumerable);
+
+        return string.Join("", enumerable.Select(x => x?.ToString()));
+    }
 }
