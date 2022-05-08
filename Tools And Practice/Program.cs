@@ -2,15 +2,9 @@
 using Tools_And_Practice.Algorithms;
 using System.Diagnostics;
 
-List<int> vs = new List<int>(2);
+var a = new List<int?> { 1, 2, 2, 2, null, 3, 4, 5 };
+var b = new List<int?> { 1, 1, 2, 2, 3, 3, 3, 4, 4 };
 
-vs.Add(0);
-vs.Add(1);
-vs.Add(2);
-vs.Add(3);
-vs.Add(4);
+var result = a.IntersectWithDuplicates(b);
 
-Console.WriteLine(vs.ConvertToString());
-
-vs.Insert(7, 7);
-Console.WriteLine(vs[7]);
+Console.WriteLine(result.ConvertToString(" "));

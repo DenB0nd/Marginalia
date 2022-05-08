@@ -83,11 +83,11 @@ public static class EnumerableExtensions
         }
     }
 
-    public static string ConvertToString<T>(this IEnumerable<T> enumerable)
+    public static string ConvertToString<T>(this IEnumerable<T> enumerable, string separator = "")
     {
         ArgumentNullException.ThrowIfNull(enumerable);
 
-        return string.Join("", enumerable.Select(x => x?.ToString()));
+        return string.Join(separator, enumerable.Select(x => x?.ToString()));
     }
 
     public static IEnumerable<T> IntersectWithDuplicates<T>(this IEnumerable<T> first, IEnumerable<T> second)
