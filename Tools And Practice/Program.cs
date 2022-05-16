@@ -1,4 +1,4 @@
-﻿using Tools_And_Practice.Extentions;
+﻿using Tools_And_Practice.Extensions;
 using Tools_And_Practice.Algorithms;
 using System.Diagnostics;
 
@@ -7,4 +7,5 @@ var b = new List<int?> { 1, 1, 2, 2, 3, 3, 3, 4, 4 };
 
 var result = a.IntersectWithDuplicates(b);
 
-Console.WriteLine(result.ConvertToString(" "));
+string str = "qwerty";
+Console.WriteLine($"1{str.ReverseString()}1");

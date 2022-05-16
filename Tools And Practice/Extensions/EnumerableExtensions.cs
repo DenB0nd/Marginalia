@@ -1,4 +1,4 @@
-﻿namespace Tools_And_Practice.Extentions;
+﻿namespace Tools_And_Practice.Extensions;
 
 public static class EnumerableExtensions
 {
