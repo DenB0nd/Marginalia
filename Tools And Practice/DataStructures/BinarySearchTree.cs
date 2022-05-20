@@ -1,6 +1,6 @@
 ﻿namespace Tools_And_Practice.DataStructures;
 
-class BinarySearchTree<T> where T : IComparable<T>
+public class BinarySearchTree<T> where T : IComparable<T>
 {
     public Node<T>? Root { get; private set; } = null;
 
@@ -179,7 +179,7 @@ class BinarySearchTree<T> where T : IComparable<T>
     }
 }
 
-class Node<T> : IComparable<Node<T>> where T : IComparable<T>
+public class Node<T> : IComparable<Node<T>> where T : IComparable<T>
 {
     public T Data { get; init; }
     public Node<T>? Left { get; set; }
