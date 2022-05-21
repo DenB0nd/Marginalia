@@ -52,16 +52,13 @@ public class BinarySearchTree<T> where T : IComparable<T>
         }
 
         Node<T>? successor;
-        if (node.Left is null || node.Right is null)
+        if (node.Left is null)
         {
-            if (node.Left is null)
-            {
-                successor = node.Right;
-            }
-            else
-            {
-                successor = node.Left;
-            }
+            successor = node.Right;
+        }
+        else if (node.Right is null)
+        {
+            successor = node.Left;
         }
         else
         {
@@ -114,7 +111,6 @@ public class BinarySearchTree<T> where T : IComparable<T>
         PostOrderTraversal(action, node.Right);
         PostOrderTraversal(action, node.Left);
         action(node);
-
     }
 
     public void PreOrderTraversal(Action<Node<T>> action) => PreOrderTraversal(action, Root);
