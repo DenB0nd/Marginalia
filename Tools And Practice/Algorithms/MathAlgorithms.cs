@@ -84,4 +84,18 @@ public static class MathAlgorithms
 
         return result;
     }
+
+    public static double EuclideanDistance(double[] x, double[] y)
+    {
+        Array.Resize(ref y, Math.Max(y.Length, x.Length));
+        Array.Resize(ref x, Math.Max(y.Length, x.Length));
+
+        double result = 0;
+        for (int i = 0; i < x.Length; i++)
+        {
+            result += Math.Pow(x[i] - y[i], 2);
+        }
+
+        return Math.Sqrt(result);
+    }
 }
