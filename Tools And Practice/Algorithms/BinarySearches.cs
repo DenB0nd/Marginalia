@@ -1,10 +1,11 @@
 ﻿namespace Tools_And_Practice.Algorithms;
 
-public static class BinarySearchs
+public static class BinarySearches
 {
-    public static int BinarySearch<T>(T[] array, T value)
+    public static int BinarySearch<T>(this IEnumerable<T> enumerable, T value)
         where T : IComparable<T>
     {
+        var array = enumerable.ToArray();
         int first = 0;
         int last = array.Length;
         int mid;
@@ -29,9 +30,10 @@ public static class BinarySearchs
         return -1;
     }
 
-    public static int BinarySearchLowerBound<T>(T[] array, T value)
+    public static int BinarySearchLowerBound<T>(this IEnumerable<T> enumerable, T value)
         where T : IComparable<T>
     {
+        var array = enumerable.ToArray();
         int first = 0;
         int last = array.Length;
         int mid;
@@ -51,9 +53,10 @@ public static class BinarySearchs
         return last;
     }
 
-    public static int BinarySearchUpperBound<T>(T[] array, T value) 
+    public static int BinarySearchUpperBound<T>(this IEnumerable<T> enumerable, T value) 
         where T : IComparable
     {
+        var array = enumerable.ToArray();
         int first = 0;
         int last = array.Length;
         int mid;

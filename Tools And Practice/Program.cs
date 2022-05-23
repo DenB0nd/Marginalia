@@ -2,9 +2,12 @@
 using Tools_And_Practice.Algorithms;
 using System.Diagnostics;
 
-var a = new List<double> { 2, 3, 3};
-var b = new List<double> { 1, 1};
+var a = new List<int> { 0, 1, 3, 4, 4, 7, 8, 8, 8, 9};
 
-var result = MathAlgorithms.EuclideanDistance(a.ToArray(), b.ToArray());
-Console.WriteLine(result);
-Console.WriteLine($"1{a}1");
+Console.WriteLine(a.BinarySearchUpperBound<int>(0));
+Console.WriteLine(a.BinarySearchUpperBound<int>(1));
+Console.WriteLine(a.BinarySearchUpperBound<int>(3));
+Console.WriteLine(a.BinarySearchUpperBound<int>(4));
+Console.WriteLine(a.BinarySearchUpperBound<int>(7));
+Console.WriteLine(a.BinarySearchUpperBound<int>(8));
+Console.WriteLine(a.BinarySearchUpperBound<int>(9));
