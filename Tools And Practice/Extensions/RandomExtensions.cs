@@ -2,6 +2,15 @@
 
 public static class RandomExtensions
 {
+    const string ALPHANUMERIC_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    public static string NextAlphanumeric(this Random random, int length = 1)
+    {
+        return new string(Enumerable.Repeat(" ", length)
+            .Select(ch => ALPHANUMERIC_CHARS[random.Next(ALPHANUMERIC_CHARS.Length)])
+            .ToArray());
+    }
+
     public static int NextInt32(this Random random)
     {
         int firstBits = Random.Shared.Next(0, 1 << 4) << 28;
