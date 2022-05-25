@@ -1,4 +1,4 @@
-﻿namespace Tools_And_Practice.Structures;
+﻿namespace Marginalia.Structures;
 
 public class DisjointSetUnion
 {

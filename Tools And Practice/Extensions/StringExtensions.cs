@@ -1,4 +1,4 @@
-﻿namespace Tools_And_Practice.Extensions;
+﻿namespace Marginalia.Extensions;
 
 public static class StringExtensions
 {

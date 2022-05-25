@@ -1,4 +1,4 @@
-﻿namespace Tools_And_Practice.Extensions;
+﻿namespace Marginalia.Extensions;
 public static class MultidimensionalExtensions
 {
     public static T[,] JaggedToMultidimensional<T>(this T[][] jaggedArray)

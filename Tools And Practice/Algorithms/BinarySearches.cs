@@ -1,4 +1,4 @@
-﻿namespace Tools_And_Practice.Algorithms;
+﻿namespace Marginalia.Algorithms;
 
 public static class BinarySearches
 {

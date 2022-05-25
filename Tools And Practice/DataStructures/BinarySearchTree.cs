@@ -1,4 +1,4 @@
-﻿namespace Tools_And_Practice.DataStructures;
+﻿namespace Marginalia.DataStructures;
 
 public class BinarySearchTree<T> where T : IComparable<T>
 {
