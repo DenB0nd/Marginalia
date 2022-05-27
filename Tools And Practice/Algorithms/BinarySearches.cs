@@ -39,7 +39,7 @@ public static class BinarySearches
         int mid;
         while (last > first)
         {
-            mid = (first + last) / 2;
+            mid = first + ((last - first) / 2);
             if (value.CompareTo(array[mid]) > 0)
             {
                 first = mid + 1;
@@ -62,7 +62,7 @@ public static class BinarySearches
         int mid;
         while (last > first)
         {
-            mid = (first + last) / 2;
+            mid = first + ((last - first) / 2);
             if (value.CompareTo(array[mid]) < 0)
             {
                 last = mid;
