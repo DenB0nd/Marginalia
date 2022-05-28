@@ -1,4 +1,6 @@
-﻿namespace Marginalia.Algorithms;
+﻿using Marginalia.Extensions;
+
+namespace Marginalia.Algorithms;
 
 public static class TextAlgorithms
 {
@@ -31,4 +33,6 @@ public static class TextAlgorithms
 
         return matrix[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
     }
+
+    public static bool IsPalindrome(string text) => text == text.ReverseString();
 }
