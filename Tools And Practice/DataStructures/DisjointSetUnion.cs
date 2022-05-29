@@ -17,12 +17,12 @@ public class DisjointSetUnion
 
     public int Find(int x)
     {
-        if (_sets[x] == x)
+        int buff = x;
+        while (_sets[buff] != buff)
         {
-            return x;
+            buff = _sets[buff];
         }
-
-        return _sets[x] = Find(_sets[x]);
+        return _sets[x] = buff;
     }
 
     public void Unite(int x, int y)
