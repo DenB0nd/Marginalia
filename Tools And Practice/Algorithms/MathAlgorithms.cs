@@ -1,4 +1,6 @@
-﻿namespace Marginalia.Algorithms;
+﻿using System.Drawing;
+
+namespace Marginalia.Algorithms;
 
 public static class MathAlgorithms
 {
@@ -98,4 +100,20 @@ public static class MathAlgorithms
 
         return Math.Sqrt(result);
     }
+
+    public static double ShoelaceFormula(IEnumerable<Point> points)
+    {
+        double res = 0;
+
+        List<Point> list = new List<Point>(points.ToList());
+        list.Add(list.First());
+        
+        for(int i = 1; i < list.Count; i++)
+        {
+            res += list[i - 1].X * list[i].Y - list[i - 1].Y * list[i].X;
+        }
+
+        return Math.Abs(res) / 2;
+    }
+
 }

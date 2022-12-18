@@ -1,12 +1,8 @@
 ﻿using Marginalia.Extensions;
 using Marginalia.Algorithms;
 using System.Diagnostics;
+using System.Drawing;
 
-Console.WriteLine(TextAlgorithms.IsPalindrome("a"));
-Console.WriteLine(TextAlgorithms.IsPalindrome("aaa"));
-Console.WriteLine(TextAlgorithms.IsPalindrome("ab"));
-Console.WriteLine(TextAlgorithms.IsPalindrome("aba"));
-Console.WriteLine(TextAlgorithms.IsPalindrome(""));
-Console.WriteLine(TextAlgorithms.IsPalindrome(" "));
-Console.WriteLine(TextAlgorithms.IsPalindrome("tenet"));
-Console.WriteLine(TextAlgorithms.IsPalindrome("ten10"));
+Point[] points = { new Point(3, 4), new Point(5, 11), new Point(12, 8), new Point(9, 5), new Point(5, 6) };
+
+Console.WriteLine(MathAlgorithms.ShoelaceFormula(points));
