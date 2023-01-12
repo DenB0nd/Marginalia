@@ -11,6 +11,16 @@ public static class RandomExtensions
             .ToArray());
     }
 
+    public static string NextAlphanumeric1(this Random random, int length = 1)
+    {
+        var result = new char[length];
+        for(int i = 0; i < length; i++)
+        {
+            result[i] = ALPHANUMERIC_CHARS[random.Next(ALPHANUMERIC_CHARS.Length)];
+        }
+        return new string (result);
+    }
+
     public static int NextInt32(this Random random)
     {
         int firstBits = Random.Shared.Next(0, 1 << 4) << 28;

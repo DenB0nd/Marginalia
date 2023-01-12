@@ -1,14 +1,15 @@
 ﻿using Marginalia.Algorithms;
+using Marginalia.Extensions;
 using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Numerics;
 
-Point[] points = { new Point(3, 4), new Point(5, 11), new Point(12, 8), new Point(9, 5), new Point(5, 6) };
-
-Stopwatch sw = Stopwatch.StartNew();
-BigInteger num = MathAlgorithms.Catalan(100000);
-sw.Stop();
-Console.WriteLine(num);
-Console.WriteLine(sw.ElapsedMilliseconds);
-
+Stopwatch stopwatch= Stopwatch.StartNew();
+Random.Shared.NextAlphanumeric(1000000000);
+stopwatch.Stop();
+Console.WriteLine(stopwatch.ElapsedMilliseconds);
+stopwatch.Restart();
+Random.Shared.NextAlphanumeric1(1000000000);
+stopwatch.Stop();
+Console.WriteLine(stopwatch.ElapsedMilliseconds);
