@@ -1,7 +1,7 @@
 ﻿namespace Marginalia.Extensions;
 public static class MultidimensionalExtensions
 {
-    public static T[,] JaggedToMultidimensional<T>(this T[][] jaggedArray)
+    public static T[,] ToTwoDimensional<T>(this T[][] jaggedArray)
     {
         int rows = jaggedArray.Length;
         int columns = jaggedArray.Max(subArray => subArray.Length);
@@ -18,7 +18,7 @@ public static class MultidimensionalExtensions
         return twoDimensionalArray;
     }
 
-    public static T[][] TwoDimensionalToJagged<T>(this T[,] twoDimensionalArray)
+    public static T[][] ToJagged<T>(this T[,] twoDimensionalArray)
     {
         int rowsFirstIndex = twoDimensionalArray.GetLowerBound(0);
         int rowsLastIndex = twoDimensionalArray.GetUpperBound(0);
@@ -40,5 +40,28 @@ public static class MultidimensionalExtensions
         }
 
         return jaggedArray;
+    }
+
+    
+    public static T[,] ToTwoDimensional<T>(this T[] array, int columns)
+    {
+        int rows = array.Length / columns + (array.Length % columns == 0 ? 0 : 1);
+
+        T[,] twoDimensionalArray = new T[rows, columns];
+
+        for(int i = 0; i < rows; i++)
+        {
+            for(int j = 0; j < columns; j++)
+            {
+                twoDimensionalArray[i, j] = default(T);
+                int index = i * columns + j;
+                if (index < array.Length)
+                {
+                    twoDimensionalArray[i, j] = array[index];
+                }            
+            }
+        }
+
+        return twoDimensionalArray;
     }
 }
