@@ -5,11 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Numerics;
 
-Stopwatch stopwatch= Stopwatch.StartNew();
-Random.Shared.NextAlphanumeric(1000000000);
-stopwatch.Stop();
-Console.WriteLine(stopwatch.ElapsedMilliseconds);
-stopwatch.Restart();
-Random.Shared.NextAlphanumeric1(1000000000);
-stopwatch.Stop();
-Console.WriteLine(stopwatch.ElapsedMilliseconds);
+Console.WriteLine(Ciphers.EncryptCaesarCipher("THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG", key: 23));
+Console.WriteLine(Ciphers.DecryptCaesarCipher("QEBNRFZHYOLTKCLUGRJMPLSBOQEBIXWVALD", key: 23));
+
+Console.WriteLine((-2) % 27);

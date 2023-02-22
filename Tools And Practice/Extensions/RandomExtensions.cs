@@ -6,13 +6,6 @@ public static class RandomExtensions
 
     public static string NextAlphanumeric(this Random random, int length = 1)
     {
-        return new string(Enumerable.Repeat(" ", length)
-            .Select(ch => ALPHANUMERIC_CHARS[random.Next(ALPHANUMERIC_CHARS.Length)])
-            .ToArray());
-    }
-
-    public static string NextAlphanumeric1(this Random random, int length = 1)
-    {
         var result = new char[length];
         for(int i = 0; i < length; i++)
         {

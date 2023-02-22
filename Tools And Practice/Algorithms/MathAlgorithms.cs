@@ -5,6 +5,12 @@ namespace Marginalia.Algorithms;
 
 public static class MathAlgorithms
 {
+    public static int Mod(int a, int b)
+    {
+        int r = a % b;
+        return r < 0 ? r + b : r;
+    }
+
     public static int GCD(int firstNumber, int secondNumber)
     {
         while (firstNumber != 0 && secondNumber != 0)
