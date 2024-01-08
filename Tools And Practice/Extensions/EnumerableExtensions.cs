@@ -1,4 +1,6 @@
-﻿namespace Marginalia.Extensions;
+﻿using System.Collections.Generic;
+
+namespace Marginalia.Extensions;
 
 public static class EnumerableExtensions
 {
@@ -57,5 +59,27 @@ public static class EnumerableExtensions
         
         var buff = second.ToList();
         return first.Where(s => buff.Remove(s));
+    }
+
+
+    public static bool IsSorted<T>(this IEnumerable<T> values) where T : IComparable<T>
+    {
+        ArgumentNullException.ThrowIfNull(values);
+
+        if(!values.Any())
+        {
+            return true;
+        }
+
+        var prev = values.First();
+        foreach (var item in values.Skip(1))
+        {
+            if(prev.CompareTo(item) > 0)
+            {
+                return false;
+            }
+            prev = item;
+        }
+        return true;
     }
 }
