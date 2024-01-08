@@ -1,4 +1,7 @@
-﻿namespace Marginalia.Algorithms;
+﻿using System.Linq;
+using Marginalia.Extensions;
+
+namespace Marginalia.Algorithms;
 
 public static class SortingAlgorithms
 {
@@ -44,4 +47,15 @@ public static class SortingAlgorithms
         return right;
     }
 
+
+    public static IEnumerable<T> MonkeySort<T>(IEnumerable<T> values) where T : IComparable<T>
+    {
+        ArgumentNullException.ThrowIfNull(values);
+
+        while (!values.IsSorted())
+        {
+            values = values.Shuffle().ToList();
+        }
+        return values;
+    }
 }
