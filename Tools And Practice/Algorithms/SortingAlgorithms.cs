@@ -54,7 +54,9 @@ public static class SortingAlgorithms
 
         while (!values.IsSorted())
         {
-            values = values.Shuffle().ToList();
+            var value = values.Shuffle();
+            values = value;
+
         }
         return values;
     }

@@ -16,6 +16,7 @@ var l8 = new List<int>() { 2, 2, 3, 5, 5 };
 var l9 = new List<int>() { 3, 4, 5, 1, 2 };
 var l10 = new List<int>() { 3, 4, 8, 5, 1, 9, 2, 0, 10 };
 
-Console.WriteLine(SortingAlgorithms.MonkeySort(l5).ConvertToString());
 
-
+IEnumerable<int> l = SortingAlgorithms.MonkeySort(l6);
+Console.WriteLine(l.ConvertToString());
+Console.WriteLine(l.IsSorted()); 

@@ -34,14 +34,16 @@ public static class EnumerableExtensions
     {
         ArgumentNullException.ThrowIfNull(enumerable, nameof(enumerable));
 
+        List<T> values = new List<T>();
         var buffer = enumerable.ToArray();
         for (int i = 0; i < buffer.Length; i++)
         {
             int j = Random.Shared.Next(i, buffer.Length);
-            yield return buffer[j];
+            values.Add(buffer[j]);
 
             buffer[j] = buffer[i];
         }
+        return values;
     }
 
     public static string ConvertToString<T>(this IEnumerable<T> enumerable, string separator = "")
